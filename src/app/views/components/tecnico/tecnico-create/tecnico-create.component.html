@@ -1,0 +1,24 @@
+<form class="form">
+    <h1>Criando novo técnico</h1>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Ex. Felipe Massa" >
+    </mat-form-field>
+  
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input matInput placeholder="Ex. 068.010.820-35" >
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Telefone</mat-label>
+        <input matInput placeholder="Ex. (48) 9 9995-9310" >
+    </mat-form-field>
+
+    
+    <button (click)="navigateToCreate()" mat-raised-button color="accent">SALVAR</button>
+
+    <button (click)="navigateToCancel()" mat-raised-button color="warn">CANCELAR</button>
+
+</form>
+  
