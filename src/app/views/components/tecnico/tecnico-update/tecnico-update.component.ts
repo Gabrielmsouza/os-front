@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Tecnico } from 'src/app/models/tecnico';
 import { TecnicoService } from 'src/app/services/tecnico.service';
 
 @Component({
-  selector: 'app-tecnico-create',
-  templateUrl: './tecnico-create.component.html',
-  styleUrls: ['./tecnico-create.component.css']
+  selector: 'app-tecnico-update',
+  templateUrl: './tecnico-update.component.html',
+  styleUrls: ['./tecnico-update.component.css']
 })
-export class TecnicoCreateComponent implements OnInit {
+export class TecnicoUpdateComponent implements OnInit {
+
+  id_tec = 0;
 
   tecnico: Tecnico = {
     id: '',
@@ -27,25 +29,37 @@ export class TecnicoCreateComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private service: TecnicoService
+    private service: TecnicoService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.id_tec =  Number(this.route.snapshot.paramMap.get('id'));
+    this.findById();
+  }
+
+  findById(): void{
+    this.service.findById(this.id_tec).subscribe(resposta => {
+      this.tecnico = resposta;
+    }, erro => {
+      this.service.message(erro.error.message)
+      this.navigateToCancel();
+    })
+  }
+
+  navigateToUpdate(): void {
+    this.service.update(this.tecnico).subscribe((resposta) => {
+      this.router.navigate(['/tecnicos'])
+      this.service.message('Tecnico alterado com sucesso!')
+    }, err => {
+      this.service.message(err.error.message)
+      console.log(err);
+
+    });
   }
 
   navigateToCancel(): void {
     this.router.navigate(['/tecnicos'])
-  }
-
-  navigateToCreate(): void {
-    this.service.create(this.tecnico).subscribe((resposta) => {
-      this.router.navigate(['/tecnicos'])
-      this.service.message('Tecnico criado com sucesso!')
-    }, err => {
-      this.service.message('Ops, encontramos algum problema ao tentar salvar seus dados, verifique os campos e tente novamente!')
-      console.log(err);
-
-    });
   }
 
   errorValidName() {
@@ -73,4 +87,5 @@ export class TecnicoCreateComponent implements OnInit {
     if (this.errorValidName() || this.errorValidCpf() || this.errorValidTelefone()) return true
     else return false;
   }
+
 }

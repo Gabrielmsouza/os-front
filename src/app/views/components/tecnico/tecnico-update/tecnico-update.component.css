@@ -1,0 +1,13 @@
+.form{
+    width: 60%;
+    margin: auto;
+}
+
+.form button{
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.full-width {
+    width: 100%;
+}

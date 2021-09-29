@@ -22,9 +22,19 @@ export class TecnicoService {
     return this.http.get<Tecnico[]>(url);
   }
 
+  findById(id : number) : Observable<Tecnico> {
+    const url = this.baseUrl + "/tecnicos/" + id;
+    return this.http.get<Tecnico>(url);
+  }   
+
   create(tecnico: Tecnico) : Observable<Tecnico> {
     const url = this.baseUrl + "/tecnicos";
     return this.http.post<Tecnico>(url,tecnico);
+  }
+
+  update(tecnico: Tecnico) : Observable<Tecnico> {
+    const url = this.baseUrl + "/tecnicos";
+    return this.http.put<Tecnico>(url,tecnico);    
   }
 
   message(msg: String){

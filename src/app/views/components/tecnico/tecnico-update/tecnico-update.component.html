@@ -1,5 +1,5 @@
 <form class="form">
-    <h1>Criando novo técnico</h1>
+    <h1>Alterando técnico</h1>
     <mat-form-field class="full-width" appearance="fill">
         <mat-label>Nome</mat-label>
         <input [(ngModel)]="tecnico.nome" [formControl]="nome" required name="nome" matInput placeholder="Ex. Felipe Massa" >
@@ -19,7 +19,7 @@
     </mat-form-field>
 
     
-    <button (click)="navigateToCreate()" [disabled]="habilitarBotaoCreate()" mat-raised-button color="accent">SALVAR</button>
+    <button (click)="navigateToUpdate()" [disabled]="habilitarBotaoCreate()" mat-raised-button color="accent">SALVAR</button>
 
     <button (click)="navigateToCancel()" mat-raised-button color="warn">CANCELAR</button>
 
