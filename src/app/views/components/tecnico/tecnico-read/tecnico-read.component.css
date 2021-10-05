@@ -19,3 +19,8 @@
 table {
     width: 100%;
 }
+
+#btnDelete {
+    color: red;
+    cursor: pointer;
+}

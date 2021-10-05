@@ -20,6 +20,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { HeaderComponent } from './views/components/template/header/header.component';
 import { FooterComponent } from './views/components/template/footer/footer.component';
@@ -28,6 +29,7 @@ import { HomeComponent } from './views/components/home/home.component';
 import { TecnicoReadComponent } from './views/components/tecnico/tecnico-read/tecnico-read.component';
 import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoUpdateComponent } from './views/components/tecnico/tecnico-update/tecnico-update.component';
+import { ConfirmDialogComponent } from './utils/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { TecnicoUpdateComponent } from './views/components/tecnico/tecnico-updat
     HomeComponent,
     TecnicoReadComponent,
     TecnicoCreateComponent,
-    TecnicoUpdateComponent
+    TecnicoUpdateComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ import { TecnicoUpdateComponent } from './views/components/tecnico/tecnico-updat
     ReactiveFormsModule,
     MatPaginatorModule,
     MatSnackBarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
