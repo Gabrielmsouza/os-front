@@ -24,3 +24,28 @@ table {
     color: red;
     cursor: pointer;
 }
+
+#btnEdit{
+    color: slategrey;
+}
+
+#column_id {
+    width: 10%;
+}
+
+#column_nome {
+    width: 50%;
+}
+
+#column_cpf {
+    width: 10%;
+}
+
+#column_telefone {
+    width: 15%;
+}
+
+#column_acoes {
+    width: 15%;
+}
+

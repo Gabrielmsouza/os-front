@@ -35,6 +35,9 @@ export class TecnicoReadComponent implements  AfterViewInit {
   findAll(): void{
     this.service.findAll().subscribe((resposta) => {
       this.tecnicos = resposta;
+
+      this.tecnicos.sort((a,b) => a.id > b.id ? -1 : 0)
+
       this.dataSource = new MatTableDataSource<Tecnico>(this.tecnicos);
       this.dataSource.paginator = this.paginator;
     });

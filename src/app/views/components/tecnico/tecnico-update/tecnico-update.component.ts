@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tecnico } from 'src/app/models/tecnico';
 import { TecnicoService } from 'src/app/services/tecnico.service';
+import { Mask } from 'src/app/utils/Mask';
 
 @Component({
   selector: 'app-tecnico-update',
@@ -10,6 +11,8 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
   styleUrls: ['./tecnico-update.component.css']
 })
 export class TecnicoUpdateComponent implements OnInit {
+  mascaraCpf = Mask.cpfMask;
+  mascaraFone = Mask.phoneMask;
 
   id_tec = 0;
 

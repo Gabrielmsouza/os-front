@@ -3,19 +3,23 @@ import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Tecnico } from 'src/app/models/tecnico';
 import { TecnicoService } from 'src/app/services/tecnico.service';
+import { Mask } from 'src/app/utils/Mask';
 
 @Component({
   selector: 'app-tecnico-create',
   templateUrl: './tecnico-create.component.html',
   styleUrls: ['./tecnico-create.component.css']
 })
+
 export class TecnicoCreateComponent implements OnInit {
+  mascaraCpf = Mask.cpfMask;
+  mascaraFone = Mask.phoneMask;
 
   tecnico: Tecnico = {
     id: '',
     nome: '',
     cpf: '',
-    telefone: ''
+    telefone: ''    
   }
 
   nome = new FormControl('', [Validators.minLength(5)]);
@@ -41,9 +45,9 @@ export class TecnicoCreateComponent implements OnInit {
     this.service.create(this.tecnico).subscribe((resposta) => {
       this.router.navigate(['/tecnicos'])
       this.service.message('Tecnico criado com sucesso!')
-    }, err => {
-      this.service.message('Ops, encontramos algum problema ao tentar salvar seus dados, verifique os campos e tente novamente!')
-      console.log(err);
+    }, erro => {
+      this.service.message(erro.error.message)
+      console.log(erro);
 
     });
   }
@@ -52,6 +56,7 @@ export class TecnicoCreateComponent implements OnInit {
     if (this.nome.invalid) {
       return 'Informe o Nome!';
     }
+
     return false;
   }
 

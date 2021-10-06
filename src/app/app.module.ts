@@ -21,6 +21,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule} from '@angular/material/tooltip';
+import { TextMaskModule } from 'angular2-text-mask';
 
 import { HeaderComponent } from './views/components/template/header/header.component';
 import { FooterComponent } from './views/components/template/footer/footer.component';
@@ -66,7 +68,9 @@ import { ConfirmDialogComponent } from './utils/confirm-dialog/confirm-dialog.co
     MatPaginatorModule,
     MatSnackBarModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule,
+    TextMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]
