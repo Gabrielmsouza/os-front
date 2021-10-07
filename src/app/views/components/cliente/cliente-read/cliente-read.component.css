@@ -1,0 +1,51 @@
+.create{
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+.create button{
+    width: 100%;
+    margin: 1rem auto;
+}
+
+.container {
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+table {
+    width: 100%;
+}
+
+#btnDelete {
+    color: red;
+    cursor: pointer;
+}
+
+#btnEdit{
+    color: slategrey;
+}
+
+#column_id {
+    width: 10%;
+}
+
+#column_nome {
+    width: 50%;
+}
+
+#column_cpf {
+    width: 10%;
+}
+
+#column_telefone {
+    width: 15%;
+}
+
+#column_acoes {
+    width: 15%;
+}
+

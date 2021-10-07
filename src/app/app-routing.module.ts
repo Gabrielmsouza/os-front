@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ClienteReadComponent } from './views/components/cliente/cliente-read/cliente-read.component';
 import { HomeComponent } from './views/components/home/home.component';
 import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoReadComponent } from './views/components/tecnico/tecnico-read/tecnico-read.component';
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'tecnicos/update/:id',
     component: TecnicoUpdateComponent
+  },
+  {
+    path: 'clientes',
+    component: ClienteReadComponent
   }
 ];
 
